@@ -4,17 +4,35 @@
     <p>Hello</p>
     <p>good bye</p>
 
-    <p>test</p>
+    <button @click="testBackEnd">  
+      Click for testing backend
+    </button>
+
+    <p>{{msg}}</p>
+    <p>{{url}}</p>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
+  import axios from 'axios'
+  export default {
+    data() {
+      return {
+        msg: '',
+        url: process.env.VUE_APP_URL
+      }
+    },
+
+    methods: {
+      testBackEnd() {
+        axios.get(this.url + '/test')
+        .then(resp => {
+          
+          this.msg = resp.data
+        })
+      }
+    }
   }
-}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
