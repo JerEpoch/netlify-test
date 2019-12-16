@@ -53,10 +53,10 @@ const actions = {
       newEmail: userData.newEmail,
       about: userData.aboutMe
     })
-    .then(res => {
+    .then(
       //console.log(res.data)
       router.push('/profile')
-    })
+    )
     .catch(err => {
       commit('SET_EDIT_ERROR_MSG',err.response.data.errorMsg)
       console.log(err.response.data.errorMsg)

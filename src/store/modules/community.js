@@ -71,7 +71,7 @@ const actions = {
       console.log(err)
     })
   },
-  submitNewsPost({}, postData) {
+  submitNewsPost( postData) {
     //console.log("sending " + postData.postBody + " " + postData.postTitle + " " + postData.isAnnouncement)
     axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('access_token')
     return axios.post('/bracket-api/communitynews/newpost', {
