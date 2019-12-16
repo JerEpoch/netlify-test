@@ -70,7 +70,7 @@ const actions = {
         router.push('/')
       })
       .catch(error => {
-        console.log('Error registering: ', error.response.data.errorMsg)
+        // console.log('Error registering: ', error.response.data.errorMsg)
         commit('SET_ERRORS', error.response.data.errorMsg)
       })
   },
@@ -113,9 +113,9 @@ const actions = {
       commit('SET_USER', res.data.logged_in_as)
       dispatch('setAccess', res.data.user_access)
     })
-    .catch(err => {
-      console.log("error getting user")
-    })
+    // .catch(err => {
+    //   // console.log("error getting user")
+    // })
   },
   isTournamentAdmin({commit}, {id}) {
 
@@ -130,8 +130,8 @@ const actions = {
       // console.log("Data from checkTournAdmin function")
       // console.log(res.data)
       var isAdmin = res.data.data
-      console.log("is tourn admin in auth.js")
-      console.log(isAdmin)
+      // console.log("is tourn admin in auth.js")
+      // console.log(isAdmin)
       commit('SET_TOURNAMENT_ADMIN', isAdmin)
       //console.log(isAdmin)
       // if (!isAdmin) {
