@@ -114,10 +114,10 @@ const actions = {
     //   commit('SET_TOTALPAGES', res.data.totalPages)
     //   commit('SET_POST_PER_PAGE', res.data.postsPerPage)
     // })
-  },
-  getCommunityAnnouncements({commit}) {
-    
   }
+  // getCommunityAnnouncements({commit}) {
+    
+  // }
 }
 
 // return axios.get(url here, {
