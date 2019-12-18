@@ -88,7 +88,7 @@ const actions = {
   },
   async getCommunityNewsPosts({commit}, page) {
     try {
-      let response = await axios.get('/bracket-api/communitynews/getnewsposts', {
+      let response = await axios.get(process.env.VUE_APP_URL + '/bracket-api/communitynews/getnewsposts', {
       params: {
         page: page
       }

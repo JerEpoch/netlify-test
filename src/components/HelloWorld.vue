@@ -36,7 +36,7 @@
     },
     methods: {
       getApi() {
-        axios.get('/bracket-api/api')
+        axios.get(process.env.VUE_APP_URL + '/bracket-api/api')
           .then(response => {
             console.log(response.data.msg) // eslint-disable-line
             this.msg = response.data.msg
