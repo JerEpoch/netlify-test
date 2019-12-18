@@ -74,7 +74,7 @@ const actions = {
   submitNewsPost( postData) {
     //console.log("sending " + postData.postBody + " " + postData.postTitle + " " + postData.isAnnouncement)
     axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('access_token')
-    return axios.post('/bracket-api/communitynews/newpost', {
+    return axios.post(process.env.VUE_APP_URL + '/bracket-api/communitynews/newpost', {
       news_title: postData.postTitle,
       news_post: postData.postBody,
       is_announcement: postData.isAnnouncement
