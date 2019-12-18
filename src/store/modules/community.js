@@ -61,7 +61,7 @@ const getters = {
 const actions = {
   getCommunityList({commit}) {
     commit('SET_COMMUNITY_IS_LOADING', true)
-    return axios.get('/bracket-api/users/community')
+    return axios.get(process.env.VUE_APP_URL + '/bracket-api/users/community')
     .then(res => {
       //console.log(res.data.members)
       commit('SET_COMMUNITY_MEMBERS', res.data.members)
