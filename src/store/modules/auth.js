@@ -58,7 +58,7 @@ const mutations =  {
 const actions = {
   async signup ({commit}, authData) {
     commit('RESET_ERROR_STATE')
-    return axios.post('/bracket-api/users/create', {
+    return axios.post(process.env.VUE_APP_URL + '/bracket-api/users/create', {
       email: authData.email,
       username: authData.username,
       password: authData.password
@@ -77,7 +77,7 @@ const actions = {
   login({commit}, authData) {
     //console.log(authData)
     commit('RESET_ERROR_STATE')
-    return axios.post('/bracket-api/users/login', {
+    return axios.post(process.env.VUE_APP_URL + '/bracket-api/users/login', {
       email: authData.email,
       password: authData.password
     })
@@ -104,7 +104,7 @@ const actions = {
   initUser({commit, dispatch}) {
     commit('RESET_ERROR_STATE')
     axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('access_token')
-    return axios.get('/bracket-api/users/user')
+    return axios.get(process.env.VUE_APP_URL + '/bracket-api/users/user')
       .then(res => {
       //console.log(res.data.logged_in_as)
       
@@ -124,7 +124,7 @@ const actions = {
     // console.log("ISTOURN ADMIN")
     // console.log(isAd)
     axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('access_token')
-    return axios.get(`/bracket-api/tournament/tournadmin/${id}`, {
+    return axios.get(process.env.VUE_APP_URL + `/bracket-api/tournament/tournadmin/${id}`, {
     })
     .then(res => {
       // console.log("Data from checkTournAdmin function")

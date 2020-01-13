@@ -60,7 +60,7 @@ const actions = {
 
     // do this still
     //axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('access_token')
-    axios.post('/bracket-api/tournament', {
+    axios.post(process.env.VUE_APP_URL + '/bracket-api/tournament', {
       tournamentId: data.tournamentId,
       players: newBracket,
       round: data.roundNumber,

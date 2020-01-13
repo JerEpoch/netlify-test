@@ -21,7 +21,7 @@ export function isValidToken(token) {
 export function setUser() {
   //console.log("setting user....")
   axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('access_token')
-  return axios.get('/bracket-api/users/user')
+  return axios.get(process.env.VUE_APP_URL + '/bracket-api/users/user')
     .then(res => {
     //console.log(res.data.logged_in_as)
     
@@ -64,7 +64,7 @@ export function checkUserInfoSet() {
 export function getAnnouncements() {
   console.log(store.getters.getAnnoucements)
   if(!store.getters.getAnnoucements){
-    return axios.get('/bracket-api/communitynews/getannouncements')
+    return axios.get(process.env.VUE_APP_URL + '/bracket-api/communitynews/getannouncements')
     .then(res => {
       console.log(res.data.data)
       store.commit('SET_ANNOUNCEMENTS', res.data.data)

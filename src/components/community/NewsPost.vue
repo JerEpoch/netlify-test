@@ -40,7 +40,7 @@ import axios from 'axios'
       getNewsPost() {
         let id = parseInt(this.$route.params.id)
         // console.log(id)
-        axios.get(`/bracket-api/communitynews/getnewspost/${id}`)
+        axios.get(process.env.VUE_APP_URL + `/bracket-api/communitynews/getnewspost/${id}`)
         .then(res => {
           // console.log(res.data.data)
           this.newsPost = res.data.data

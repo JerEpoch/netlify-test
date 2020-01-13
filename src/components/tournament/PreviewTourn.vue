@@ -73,7 +73,7 @@
         //var jwt = localStorage.getItem('access_token')
         // console.log(bracket)
         axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('access_token')
-        return axios.post('/bracket-api/tournament/create', {
+        return axios.post(process.env.VUE_APP_URL + '/bracket-api/tournament/create', {
           bracket,
           tournamentName: name,
           round: 1
@@ -91,7 +91,7 @@
       getTourns() {
         // console.log("getting")
 
-        return axios.get('/bracket-api/tournament/getAllTournaments', {
+        return axios.get(process.env.VUE_APP_URL + '/bracket-api/tournament/getAllTournaments', {
 
         })
         .then(res => {

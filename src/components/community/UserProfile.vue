@@ -39,7 +39,7 @@ import axios from 'axios'
       getUserProfile() {
         const userID = parseInt(this.$route.params.id)
         //console.log("User id is " + userID)
-        return axios.get(`/bracket-api/users/community/user/${userID}`)
+        return axios.get(process.env.VUE_APP_URL + `/bracket-api/users/community/user/${userID}`)
         .then(res => {
           this.user = res.data.msg
           // console.log(res.data.msg)

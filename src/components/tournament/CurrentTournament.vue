@@ -42,7 +42,7 @@
 		methods: {
 			getTournaments() {
 				// console.log('getting all current tourns...')
-				axios.get('/bracket-api/tournament/getAllTournaments')
+				axios.get(process.env.VUE_APP_URL + '/bracket-api/tournament/getAllTournaments')
 				.then(res =>{
 					// console.log(res.data)
 					this.allTournaments = res.data.tourns
